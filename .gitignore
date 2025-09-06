@@ -1,0 +1,42 @@
+Python
+
+pycache/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+pip-log.txt
+pip-delete-this-directory.txt
+IDE / Editor specific
+
+.vscode/
+.idea/
+*.swp
+*.swo
+Data and Models - These can be very large and should not be in git
+
+/data/vector_store/
+/data/source_documents/*
+!/data/source_documents/sample_financial_report.pdf # Keep the sample file
+/data/generated_dataset/*
+/models/
+API Keys & Sensitive Info
+
+config/config.yaml # Exclude the config file to protect API keys.
+# A template or example should be committed instead if needed.
+Notebook specific
+
+.ipynb_checkpoints/
+Streamlit
+
+.streamlit/
+Byte-compiled / optimized / DLL files
+
+*.so
+*.o
+Environment variables
+
+.env

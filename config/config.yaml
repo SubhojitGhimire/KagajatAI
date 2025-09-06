@@ -1,0 +1,25 @@
+llm:
+  provider: "huggingface" # replace value with "gemini" to use Gemini API and "huggingface" to use local models
+  gemini:
+    gemini_api_key: "ITwonTworknUSENMbYiVyourOWNkszAuPmIzApI" # TO DO: Replace API Key with "YOUR_GEMINI_API_KEY_HERE" before committing code to github
+    model_name: "gemini-1.5-flash-latest"
+  huggingface:
+    generation_model_name: "local-model/Llama-3.1-8B-Instruct" # Use any other compatible model, if needed
+    quantization: "4bit" # "4bit", "8bit", "fp16", "fp32"
+
+embedding:
+  model_name: "BAAI/bge-large-en-v1.5" # BGE Large English model; Replace with your preferred sentence-transformer model from Hugging Face, if needed
+  device: "cuda" # Use "cuda" for GPU, "cpu" for CPU
+  normalize: true # true, false. Normalizing embeddings can improve performance
+
+data:
+  source_documents_path: "data/source_documents"
+  vector_store_path: "data/vector_store"
+  chunk_size: 1000 # The size of each text chunk
+  chunk_overlap: 100 # Number of characters to overlap between chunks
+
+finetuning:
+  dataset_path: "data/generated_dataset/finetuning_data.jsonl"
+  base_model_name: "local-model/Llama-3.1-8B-Instruct"
+  output_dir: "models/Llama-3.1-8B-Instruct-Finetuned"
+  finetuned_model_path: "models/Llama-3.1-8B-Instruct-Finetuned"
